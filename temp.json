@@ -1,0 +1,117 @@
+{
+"events":[
+        {
+          "id": "Greet",
+          "message": "Hello, Welcome to our shop",
+          "trigger": "Ask Name"
+        },
+        {
+          "id": "Ask Name",
+          "message": "Please type your name?",
+          "trigger": "Waiting user input for name"
+        },
+        {
+          "id": "Waiting user input for name",
+          "user": true,
+          "trigger": "Asking options for events"
+        },
+        {
+          "id": "Asking options for events",
+          "message": "Hi {previousValue}, Please select from the following events",
+          "trigger": "Displaying options for events"
+        },
+        {
+          "id": "again",
+          "message": "Thank you for choosing to book another event",
+          "trigger": "Display"
+        },
+        {
+          "id": "Display",
+          "message": "Please select from the following events",
+          "trigger": "Displaying options for events"
+        },
+        {
+            "id": "Displaying options for events",
+            "options": [
+              { "value": "marriage", "label": "Marriage", "trigger": "price range" },
+              { "value": "party", "label": "Party", "trigger": "price range" },
+              { "value": "engagement", "label": "Engagement", "trigger": "price range" },
+              { "value": "meeting", "label": "Meeting", "trigger": "price range" },
+              { "value": "interview", "label": "Interview", "trigger": "price range" },
+              { "value": "Death Ceremony", "label": "Death Ceremony", "trigger": "price range" }
+            ]
+          },
+          {
+            "id": "price range",
+            "message": "Price ranges are as follows",
+            "trigger": "prices"
+          },
+          {
+            "id": "prices",
+            "options": [
+                { "value": "between 5K to 10K", "label": "₹5000-10000", "trigger": "Low"},
+                { "value": "between 10K to 15K", "label": "₹10000-15000", "trigger": "Medium" },
+                { "value": "between 15K to 20K", "label": "₹15000-20000", "trigger": "High" }
+            ]
+          },
+          {
+            "id": "Low",
+            "message": "These are the places you could afford for a range {previousValue}",
+            "trigger": "low"
+          },
+          {
+            "id": "Medium",
+            "message": "These are the places you could afford for a range {previousValue}",
+            "trigger": "medium"
+          },
+          {
+            "id": "High",
+            "message": "These are the places you could afford for a range {previousValue}",
+            "trigger": "high"
+          },
+          {
+            "id": "low",
+            "options": [
+                { "value": "Kolapur", "label": "Kolapur", "trigger": "thanks" },
+                { "value": "Solapur", "label": "Solapur", "trigger": "thanks" }
+            ]
+          },
+          {
+            "id": "medium",
+            "options": [
+                { "value": "Pune", "label": "Pune", "trigger": "thanks" },
+                { "value": "Banglore", "label": "Banglore", "trigger": "thanks" }
+            ]
+          },
+          {
+            "id": "high",
+            "options": [
+                { "value": "Mumbai", "label": "Mumbai", "trigger": "thanks" },
+                { "value": "Delhi", "label": "Delhi", "trigger": "thanks" },
+                { "value": "Pune", "label": "Pune", "trigger": "thanks" }
+            ]
+          },
+          {
+              "id":"thanks",
+              "message": "Thanks, your event is booked at {previousValue}",
+              "trigger": "ask again"
+          },
+          {
+              "id":"ask again",
+              "message": "Do you want to book another Event?",
+              "trigger": "Ask Again"
+          },
+          {
+              "id":"Ask Again",
+              "options": [
+                  {"value": "yes", "label": "Yes", "trigger": "again"},
+                  {"value": "no", "label": "No", "trigger": "the end"}
+              ]
+          },
+          {
+              "id":"the end",
+              "message": "Thank you sir, it was nice serving you!",
+              "end": true
+          }
+    ]
+  }
