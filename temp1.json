@@ -1,0 +1,143 @@
+{
+    "events":[
+    {
+      "id": "greet",
+      "message": "Hello there! 👋",
+      "trigger": "name"
+    },
+    {
+      "id": "1",
+      "message": "What is your sweet name?",
+      "trigger": "name"
+    },
+    {
+      "id": "name",
+      "user": true,
+      "trigger": "3"
+    },
+    {
+      "id": "3",
+      "message": "Well, Hi {previousValue}! Can you spare a moment?🕔",
+      "trigger": "4"
+    },
+    {
+      "id": "4",
+      "message": "Please give us your precious reviews 👓",
+      "trigger": "5"
+    },
+    {
+      "id": "5",
+      "message": "How would you rate the food out of 5? 💹",
+      "trigger": "food"
+    },
+    {
+      "id": "food",
+      "options": [
+        { "value": "1", "label": "👎🏻", "trigger": "6" },
+        { "value": "2", "label": "😕", "trigger": "6" },
+        { "value": "3", "label": "✌", "trigger": "6" },
+        { "value": "4", "label": "👍🏻", "trigger": "6" },
+        { "value": "5", "label": "👏🏻", "trigger": "6" }
+      ]
+    },
+    {
+      "id": "6",
+      "message": "What about the ambiance?",
+      "trigger": "ambiance"
+    },
+    {
+      "id": "ambiance",
+      "options": [
+        { "value": "1", "label": "👎🏻", "trigger": "7" },
+        { "value": "2", "label": "😕", "trigger": "7" },
+        { "value": "3", "label": "✌", "trigger": "7" },
+        { "value": "4", "label": "👍🏻", "trigger": "7" },
+        { "value": "5", "label": "👏🏻", "trigger": "7" }
+      ]
+    },
+    {
+      "id": "7",
+      "message": "What do you think of the punctuality?",
+      "trigger": "punctuality"
+    },
+    {
+      "id": "punctuality",
+      "options": [
+        { "value": "1", "label": "👎🏻", "trigger": "8" },
+        { "value": "2", "label": "😕", "trigger": "8" },
+        { "value": "3", "label": "✌", "trigger": "8" },
+        { "value": "4", "label": "👍🏻", "trigger": "8" },
+        { "value": "5", "label": "👏🏻", "trigger": "8" }
+      ]
+    },
+    {
+      "id": "8",
+      "message": "How was the event as a whole? Did you enjoy?",
+      "trigger": "happy"
+    },
+    {
+      "id": "happy",
+      "options": [
+        { "value": "yes", "label": "Yes, absolutely! 🙂", "trigger": "positive" },
+        { "value": "no", "label": "Not Really! 😟", "trigger": "negative" }
+      ]
+    },
+    {
+      "id": "positive",
+      "message": "Good to know that!",
+      "trigger": "9"
+    },
+    {
+      "id": "9",
+      "message": "Will you let us know of the areas where we can improve?",
+      "trigger": "11"
+    },
+    {
+      "id": "11",
+      "message": "Except for the above",
+      "trigger": "feedback-choice"
+    },
+    {
+      "id": "feedback-choice",
+      "options": [
+        { "value": "yes", "label": "yes", "trigger": "12" },
+        { "value": "no", "label": "no", "trigger": "thankyou" }
+      ]
+    },
+    {
+      "id": "negative",
+      "message": "Really sorry to read that.☹️",
+      "trigger": "10"
+    },
+    {
+      "id": "10",
+      "message": "Can you tell us where we lost you?",
+      "trigger": "feedback-choice"
+    },
+    {
+      "id": "12",
+      "message": "Please provide us your feedback✍🏽",
+      "trigger": "feedback"
+    },
+    {
+      "id": "feedback",
+      "user": true,
+      "trigger": "display"
+    },
+    {
+      "id": "display",
+      "message": "Here is what you have submitted",
+      "trigger": "review"
+    },
+    {
+      "id": "thankyou",
+      "message": "Thank you so much for spending your valuable time💓",
+      "trigger": "ending"
+    },
+    {
+      "id": "ending",
+      "message": "BYE! 🙋‍♂️",
+      "end": true
+    }
+  ]
+}

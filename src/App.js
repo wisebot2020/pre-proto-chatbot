@@ -46,7 +46,7 @@ function App () {
             size="lg" 
             onClick={() => mode === "grey" ? 
               (setMode("white"), setVariant(["secondary", "Dark Mode"])) : 
-              (setMode("grey"), setVariant(["outline-secondary", "Ligth Mode"])) 
+              (setMode("grey"), setVariant(["light", "Ligth Mode"])) 
               } block>{variant[1]}</Button>
           <br /><ChatBot steps={steps_} mode = {mode}/>
         </div>
