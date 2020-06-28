@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+span.wave {
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+  font-size: 2.5em;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate(  0.0deg) }
+   10% { transform: rotate(-10.0deg) }
+   20% { transform: rotate( 12.0deg) }
+   30% { transform: rotate(-10.0deg) }
+   40% { transform: rotate(  9.0deg) }
+   50% { transform: rotate(  0.0deg) }
+  100% { transform: rotate(  0.0deg) }
+}
+
+.main-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  /* display: table-cell; */
+}
+
+.imgAsMsg{
+  height: 150px;
+  width: auto;
+  transition: 1s;
+}
+
+.imgAsMsg:hover{
+  height: 155px;
+  width: auto;
+  transition: 1s;
+}
