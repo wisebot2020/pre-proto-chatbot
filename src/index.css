@@ -39,14 +39,14 @@ span.wave {
   /* display: table-cell; */
 }
 
-.imgAsMsg{
-  height: 150px;
+#imgs{
+  height: 100px;
   width: auto;
   transition: 1s;
 }
 
-.imgAsMsg:hover{
-  height: 155px;
+#imgs:hover{
+  height: 105px;
   width: auto;
   transition: 1s;
 }

@@ -40,7 +40,7 @@ class Review extends Component {
 
     return (
       <div style={{ width: '100%' }}>
-        <Table responsive striped bordered hover variant="light" size="lg">
+        <Table responsive striped bordered hover variant="light" size="sm">
           <thead>
             <th>Category</th>
             <th>Answer</th>
