@@ -2,7 +2,8 @@ import React,{useState, useEffect} from "react";
 import "./App.css";
 import ChatBot from "./Components/chatbot/ChatBot"
 import firebase from './Components/firebase';
-import ReactSpinner from 'react-bootstrap-spinner';
+import ReactLoading from "react-loading";
+import "bootstrap/dist/css/bootstrap.css";
 
 function App () {
   
@@ -23,8 +24,18 @@ function App () {
     }},[])
     if(steps_.length===0){
       return (
-        <div className="main-content">
-          <ReactSpinner type="grow" color="primary" size="7" />
+        <div>
+          <div className="main-content" style = {{background : "grey"}}>
+            <h1 style={{color: "white"}}>Hiii, I'm wise Chatbot! I'll talk to you in a moment!</h1>
+          </div>
+          <br />
+          <br />
+          <br />
+          <div className = "main-content">
+            <ReactLoading type={"bubbles"} color={"blue"} height={200} width={200} />
+            <img src = "https://miro.medium.com/max/525/1*lyyXmbeoK5JiIBNCnzzjjg.png" height = "150px" width = "150px"  alt = "Assistant"/>
+            <ReactLoading type={"bubbles"} color={"blue"} height={200} width={200} />
+          </div>
         </div>
       )
     }

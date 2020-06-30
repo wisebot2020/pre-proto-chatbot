@@ -18,6 +18,7 @@
     "react-bootstrap-toggle": "^2.3.2",
     "react-dom": "^16.13.1",
     "react-floating-action-button": "^1.0.5",
+    "react-loading": "^2.0.3",
     "react-modal-image": "^2.5.0",
     "react-new-window": "^0.1.2",
     "react-responsive": "^8.1.0",
