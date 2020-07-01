@@ -18,7 +18,7 @@ function App () {
       const visitedFeedback=firebase.database().ref('feedback-visited');
       const temp={visited: true};
       visitedFeedback.push(temp);
-     
+    
     return () => {
       mounted()
     }},[])
@@ -37,6 +37,7 @@ function App () {
             <ReactLoading type={"bubbles"} color={"blue"} height={200} width={200} />
           </div>
         </div>
+        // <div dangerouslySetInnerHTML={{}} />
       )
     }
     else {

@@ -1,273 +1,739 @@
 {
-  "events":[
-        {
-          "id": "Greet",
-          "message": "Hello, Welcome to our shop",
-          "trigger": "Ask Name",
-          "hideInput": true
-        },
-        {
-          "id": "Ask Name",
-          "message": "Please type your name?",
-          "trigger": "Waiting user input for name"
-        },
-        {
-          "id": "Waiting user input for name",
-          "user": true,
-          "trigger": "Asking options for events"
-        },
-        {
-          "id": "Asking options for events",
-          "message": "Hi {previousValue}, Please select from the following events",
-          "trigger": "Displaying options for events",
-          "hideInput": true
-        },
-        {
-          "id": "again",
-          "message": "Thank you for choosing to book another event",
-          "trigger": "Display",
-          "hideInput": true
-        },
-        {
-          "id": "Display",
-          "message": "Please select from the following events",
-          "trigger": "Displaying options for events",
-          "hideInput": true
-        },
-        {
-            "id": "Displaying options for events",
-            "options": [
-              { "value": "marriage", "label": "Marriage", "trigger": "price range" },
-              { "value": "party", "label": "Party", "trigger": "price range" },
-              { "value": "engagement", "label": "Engagement", "trigger": "price range" },
-              { "value": "meeting", "label": "Meeting", "trigger": "price range" },
-              { "value": "interview", "label": "Interview", "trigger": "price range" },
-              { "value": "Death Ceremony", "label": "Death Ceremony", "trigger": "price range" }
-            ],
-            "hideInput": true
-          },
-          {
-            "id": "price range",
-            "message": "Price ranges are as follows",
-            "trigger": "prices",
-            "hideInput": true
-          },
-          {
-            "id": "prices",
-            "options": [
-                { "value": "between 5K to 10K", "label": "₹5000-10000", "trigger": "Low"},
-                { "value": "between 10K to 15K", "label": "₹10000-15000", "trigger": "Medium" },
-                { "value": "between 15K to 20K", "label": "₹15000-20000", "trigger": "High" }
-            ],
-            "hideInput": true
-          },
-          {
-            "id": "Low",
-            "message": "These are the places you could afford for a range {previousValue}",
-            "trigger": "low",
-            "hideInput": true
-          },
-          {
-            "id": "Medium",
-            "message": "These are the places you could afford for a range {previousValue}",
-            "trigger": "medium",
-            "hideInput": true
-          },
-          {
-            "id": "High",
-            "message": "These are the places you could afford for a range {previousValue}",
-            "trigger": "high",
-            "hideInput": true
-          },
-          {
-            "id": "low",
-            "options": [
-                { "value": "Kolapur", "label": "Kolapur", "trigger": "thanks" },
-                { "value": "Solapur", "label": "Solapur", "trigger": "thanks" }
-            ],
-            "hideInput": true
-          },
-          {
-            "id": "medium",
-            "options": [
-                { "value": "Pune", "label": "Pune", "trigger": "thanks" },
-                { "value": "Banglore", "label": "Banglore", "trigger": "thanks" }
-            ],
-            "hideInput": true
-          },
-          {
-            "id": "high",
-            "options": [
-                { "value": "Mumbai", "label": "Mumbai", "trigger": "thanks" },
-                { "value": "Delhi", "label": "Delhi", "trigger": "thanks" },
-                { "value": "Pune", "label": "Pune", "trigger": "thanks" }
-            ],
-            "hideInput": true
-          },
-          {
-              "id":"thanks",
-              "message": "Thanks, your event is booked at {previousValue}",
-              "trigger": "ask again",
-              "hideInput": true
-          },
-          {
-              "id":"ask again",
-              "message": "Do you want to book another Event?",
-              "trigger": "Ask Again",
-              "hideInput": true
-          },
-          {
-              "id":"Ask Again",
-              "options": [
-                  {"value": "yes", "label": "Yes", "trigger": "again"},
-                  {"value": "no", "label": "No", "trigger": "the end"}
-              ],
-              "hideInput": true
-          },
-          {
-              "id":"the end",
-              "message": "Thank you sir, it was nice serving you!",
-              "end": true,
-              "hideInput": true
-          }
-    ],
-  "feedback":[
-    {
-      "id": "greet",
-      "message": "Hello there! 👋",
-      "trigger": "wave"
+  "event-booking-visited" : {
+    "-MB3W-zhUuUzPzlceWCl" : {
+      "visited" : true
     },
-    {
-      "id": "1",
-      "message": "What is your sweet name?",
-      "trigger": "name"
+    "-MB3YvKTmdIxmQYjz7tz" : {
+      "visited" : true
     },
-    {
-      "id": "3",
-      "message": "Well, Hi {previousValue}! Can you spare a moment?🕔",
-      "trigger": "4",
-      "hideInput": true
+    "-MB3Z1rgGSX_lw7xp6El" : {
+      "visited" : true
     },
-    {
-      "id": "4",
-      "message": "Please give us your precious reviews 👓",
-      "trigger": "4.1",
-      "hideInput": true
+    "-MB3celt1r39yosPgh6j" : {
+      "visited" : true
     },
-    {
-      "id": "5",
-      "message": "How would you rate the food? 💹",
-      "trigger": "5.1",
-      "hideInput": true
+    "-MB3dPc9zCQutGbs2MLD" : {
+      "visited" : true
     },
-    {
-      "id": "food",
-      "options": [
-        { "value": "1", "label": "1", "trigger": "6" },
-        { "value": "2", "label": "2", "trigger": "6" },
-        { "value": "3", "label": "3", "trigger": "6" },
-        { "value": "4", "label": "4", "trigger": "6" },
-        { "value": "5", "label": "5", "trigger": "6" }
-      ],
-      "hideInput": true
+    "-MB3f0eFRRZTeb5knjhD" : {
+      "visited" : true
     },
-    {
-      "id": "6",
-      "message": "What about the ambiance?",
-      "trigger": "6.1",
-      "hideInput": true
+    "-MB3lcPuZGjXAFxu59iC" : {
+      "visited" : true
     },
-    {
-      "id": "ambiance",
-      "options": [
-        { "value": "1", "label": "1", "trigger": "7" },
-        { "value": "2", "label": "2", "trigger": "7" },
-        { "value": "3", "label": "3", "trigger": "7" },
-        { "value": "4", "label": "4", "trigger": "7" },
-        { "value": "5", "label": "5", "trigger": "7" }
-      ],
-      "hideInput": true
+    "-MB3mXpUJJPOVKsVq_hs" : {
+      "visited" : true
     },
-    {
-      "id": "7",
-      "message": "What do you think of the punctuality?",
-      "trigger": "7.1",
-      "hideInput": true
+    "-MB3nS7bs8ySJgGpnctD" : {
+      "visited" : true
     },
-    {
-      "id": "punctuality",
-      "options": [
-        { "value": "1", "label": "1", "trigger": "8" },
-        { "value": "2", "label": "2", "trigger": "8" },
-        { "value": "3", "label": "3", "trigger": "8" },
-        { "value": "4", "label": "4", "trigger": "8" },
-        { "value": "5", "label": "5", "trigger": "8" }
-      ],
-      "hideInput": true
+    "-MB3tY86-WuvvSzJqIS7" : {
+      "visited" : true
     },
-    {
-      "id": "8",
-      "message": "How was the event as a whole? Did you enjoy?",
-      "trigger": "8.1",
-      "hideInput": true
+    "-MB3tsnsA4N0acC8cER8" : {
+      "visited" : true
     },
-    {
-      "id": "happy",
-      "options": [
-        { "value": "yes", "label": "Yes, absolutely! 🙂", "trigger": "10.1" },
-        { "value": "no", "label": "Not Really! 😟", "trigger": "negative" }
-      ],
-      "hideInput": true
+    "-MB3uP1Op9pdN1DuLcLG" : {
+      "visited" : true
     },
-    {
-      "id": "positive",
-      "message": "Good to know that!",
-      "trigger": "9",
-      "hideInput": true
+    "-MB3uQ5JwWMl26_wWaF2" : {
+      "visited" : true
     },
-    {
-      "id": "9",
-      "message": "Will you let us know of the areas where we can improve?",
-      "trigger": "11",
-      "hideInput": true
+    "-MB3uyFHkN3AmzuYhZa8" : {
+      "visited" : true
     },
-    {
-      "id": "11",
-      "message": "Except for the above",
-      "trigger": "12"
+    "-MB3vS3qf6K_upLwAWrk" : {
+      "visited" : true
     },
-    {
-      "id": "negative",
-      "message": "Really sorry to read that.☹️",
-      "trigger": "10"
+    "-MB3veUF_UtpNpqt42q7" : {
+      "visited" : true
     },
-    {
-      "id": "10",
-      "message": "Can you tell us where we lost you?",
-      "trigger": "12"
+    "-MB3vjZSffC9mNYIIMfX" : {
+      "visited" : true
     },
-    {
-      "id": "12",
-      "message": "Please provide us your feedback✍🏽",
-      "trigger": "feedback"
+    "-MB3voE5DFrL0d_JM9eE" : {
+      "visited" : true
     },
-    {
-      "id": "display",
-      "message": "Here is what you have submitted",
-      "trigger": "review",
-      "hideInput": true
+    "-MB3vr24zm3fFIsf1fbv" : {
+      "visited" : true
     },
-    {
-      "id": "thankyou",
-      "message": "Thank you so much for spending your valuable time💓",
-      "trigger": "pre-ending",
-      "hideInput": true
+    "-MB3vsuzzoK-1VKg44Pj" : {
+      "visited" : true
     },
-    {
-      "id": "meta-ending",
-      "message": "BYE! 🙋‍♂️",
-      "placeholder": "The conversation has ended.",
-      "end": true
+    "-MB3vw8OQU_c_CdTgtdP" : {
+      "visited" : true
+    },
+    "-MB3vyq_xBqwDUUotWbL" : {
+      "visited" : true
+    },
+    "-MB3xliZugYva2uJItju" : {
+      "visited" : true
+    },
+    "-MB3xpbJqgDZANWE1Nk4" : {
+      "visited" : true
+    },
+    "-MB4-t_0jAqncJ9Jsf6e" : {
+      "visited" : true
+    },
+    "-MB4-xKcRfGatnMVP-YM" : {
+      "visited" : true
+    },
+    "-MB402_amEoXZdNzAH-_" : {
+      "visited" : true
+    },
+    "-MB404TbjDhKD_T_mazE" : {
+      "visited" : true
+    },
+    "-MB417npDofThcaaJ-qi" : {
+      "visited" : true
+    },
+    "-MB41TvqDtBY1wSGmwVL" : {
+      "visited" : true
+    },
+    "-MB41W1Y97sUsFsFWnNT" : {
+      "visited" : true
+    },
+    "-MB41YqZbuNK6NO1nXVk" : {
+      "visited" : true
+    },
+    "-MB41_KGMmC62hXgmOl5" : {
+      "visited" : true
+    },
+    "-MB41l904VuC9ytdCZGR" : {
+      "visited" : true
+    },
+    "-MB41py2Z3KVf15A2bBX" : {
+      "visited" : true
+    },
+    "-MB41s2HMYD1-gIxGn_F" : {
+      "visited" : true
+    },
+    "-MB41vKymAm7sSsjvPyY" : {
+      "visited" : true
+    },
+    "-MB42LhZlXBpLh_e6Vyx" : {
+      "visited" : true
+    },
+    "-MB42NTQqSEZT4TfhIua" : {
+      "visited" : true
+    },
+    "-MB44B_QgRGjJuvGN3qF" : {
+      "visited" : true
+    },
+    "-MB44jL8k5U1GXw-6qVN" : {
+      "visited" : true
+    },
+    "-MB44kecW5Vl1HWNObbW" : {
+      "visited" : true
+    },
+    "-MB44nMVoiehuQ5Hi0SL" : {
+      "visited" : true
+    },
+    "-MB44wgcxd2LN33SxYWa" : {
+      "visited" : true
+    },
+    "-MB45-_EImxxr55KKL9v" : {
+      "visited" : true
+    },
+    "-MB453Z3kQi6oBsO-tmO" : {
+      "visited" : true
+    },
+    "-MB455WwsCfUCj3yAzRv" : {
+      "visited" : true
+    },
+    "-MB458NlxKfvzrbUttgm" : {
+      "visited" : true
+    },
+    "-MB45TvtOLnzAiLjU_Xu" : {
+      "visited" : true
+    },
+    "-MB45YwMRYmCeiABJVe8" : {
+      "visited" : true
+    },
+    "-MB46YLElCKokbaBBIo2" : {
+      "visited" : true
+    },
+    "-MB46i850sL44OrVxzsA" : {
+      "visited" : true
+    },
+    "-MB46lXHoB5ydNxNzo2s" : {
+      "visited" : true
+    },
+    "-MB46p9PQE5AdFWckk1i" : {
+      "visited" : true
+    },
+    "-MB46sZLrWiJ1u02YHWX" : {
+      "visited" : true
+    },
+    "-MB46z52VrhrEbiNsE_s" : {
+      "visited" : true
+    },
+    "-MB470QmnDAwTdhtTiDm" : {
+      "visited" : true
+    },
+    "-MB478GMll229P3PSznk" : {
+      "visited" : true
+    },
+    "-MB47BerbXgSTSzijZ-y" : {
+      "visited" : true
+    },
+    "-MB47NJ-EAGY7IfxPuzC" : {
+      "visited" : true
+    },
+    "-MB48E3-D2q0EzIGJPCI" : {
+      "visited" : true
+    },
+    "-MB48HKHY7k7yu5UHKNO" : {
+      "visited" : true
+    },
+    "-MB48KELUl6KVhHUhvo2" : {
+      "visited" : true
+    },
+    "-MB48cIgcW6moC_X2_H_" : {
+      "visited" : true
+    },
+    "-MB49YMb_Czvq-qzuoPB" : {
+      "visited" : true
+    },
+    "-MB4EiHL9XuIIKtLh8Lx" : {
+      "visited" : true
+    },
+    "-MB4EwTy115spIrbYFkH" : {
+      "visited" : true
+    },
+    "-MB57BP31sjJ94jbJLdD" : {
+      "visited" : true
+    },
+    "-MB5AxhXZjNhOvzjrx6-" : {
+      "visited" : true
+    },
+    "-MB5CLY1kVwGAJ3IMvh0" : {
+      "visited" : true
+    },
+    "-MB8AGwsFqC1uTB6OQlu" : {
+      "visited" : true
+    },
+    "-MB8YNjtdBhwLeEqV0gd" : {
+      "visited" : true
+    },
+    "-MB8Yt2TZviG1MuQf8NU" : {
+      "visited" : true
+    },
+    "-MB8Z6YUdfWuHPreDVqt" : {
+      "visited" : true
     }
-  ]
+  },
+  "event-data" : {
+    "-MB3ljWOPNIRL77oE7fd" : {
+      "Contact Details" : "2",
+      "Name" : "vips",
+      "Type of Event" : "marriage"
+    },
+    "-MB3mdr-_Ju3xQUTVN6Y" : {
+      "Contact Details" : "@",
+      "Name" : "ljd",
+      "Type of Event" : "kdke"
+    },
+    "-MB3nbxGXrMHLX3IVL7x" : {
+      "Contact Details" : "@",
+      "Name" : "vipsy",
+      "Type of Event" : "birthday"
+    },
+    "-MB3u_OWc0FBPpXu_bI1" : {
+      "Contact Details" : "5",
+      "Name" : "iude",
+      "Type of Event" : "marriage"
+    },
+    "-MB3v8ev1flLyOn7ErLZ" : {
+      "Contact Details" : "5485463134",
+      "Name" : "elknf",
+      "Type of Event" : "birthday"
+    },
+    "-MB4EtQ56Io_I8sEpIqe" : {
+      "Contact Details" : "8888888888",
+      "Name" : "Omkar",
+      "Type of Event" : "birthday"
+    },
+    "-MB4F9CIsC8zite5Aqud" : {
+      "Contact Details" : "8765432109",
+      "Name" : "Ssb",
+      "Type of Event" : "marriage"
+    },
+    "-MB5B9ijptopQarDG0gq" : {
+      "Contact Details" : "9026788899",
+      "Name" : "Sanjana Thakur",
+      "Type of Event" : "birthday"
+    },
+    "-MB8AZWJDTtBQtuml5_s" : {
+      "Contact Details" : "A@b.vom",
+      "Name" : "Vipul",
+      "Type of Event" : "marriage"
+    }
+  },
+  "events" : [ {
+    "hideInput" : true,
+    "id" : "greet",
+    "message" : "Hello there! 👋",
+    "trigger" : "wave"
+  }, {
+    "hideInput" : true,
+    "id" : "2",
+    "message" : "Please tell us your sweet name",
+    "trigger" : "name"
+  }, {
+    "hideInput" : true,
+    "id" : "3",
+    "message" : "Well, Hi {previousValue}, Nice to have you here!",
+    "trigger" : "4"
+  }, {
+    "hideInput" : true,
+    "id" : "4",
+    "message" : "These are some of our recent events!",
+    "trigger" : "5"
+  }, {
+    "hideInput" : true,
+    "id" : "6",
+    "message" : "Which events are you looking for?",
+    "trigger" : "option"
+  }, {
+    "hideInput" : true,
+    "id" : "option",
+    "options" : [ {
+      "label" : "Marriage",
+      "trigger" : "marriage",
+      "value" : "marriage"
+    }, {
+      "label" : "Birthday",
+      "trigger" : "birthday",
+      "value" : "birthday"
+    }, {
+      "label" : "Concert",
+      "trigger" : "concert",
+      "value" : "concert"
+    }, {
+      "label" : "Not here? tell us which",
+      "trigger" : "enter-other",
+      "value" : "other"
+    } ]
+  }, {
+    "hideInput" : true,
+    "id" : "enter-other",
+    "message" : "Please mention the event you want to host",
+    "trigger" : "other-ask"
+  }, {
+    "id" : "other-ask",
+    "message" : "We might not have hosted that event",
+    "trigger" : "other"
+  }, {
+    "hideInput" : true,
+    "id" : "7",
+    "message" : "Well, we have not hosted {previousValue} yet",
+    "trigger" : "sorry-gif"
+  }, {
+    "hideInput" : true,
+    "id" : "ask-contact",
+    "message" : "Please provide us with any one of your contact detail",
+    "trigger" : "contact"
+  }, {
+    "hideInput" : true,
+    "id" : "contact",
+    "options" : [ {
+      "label" : "Email",
+      "trigger" : "ask-email",
+      "value" : "email"
+    }, {
+      "label" : "Phone",
+      "trigger" : "ask-phone",
+      "value" : "phone"
+    } ]
+  }, {
+    "id" : "ask-email",
+    "message" : "Enter your Email address",
+    "trigger" : "email"
+  }, {
+    "hideInput" : true,
+    "id" : "pre-ending",
+    "message" : "Thank you for your time, and contact details",
+    "trigger" : "thanks-gif"
+  }, {
+    "hideInput" : true,
+    "id" : "12",
+    "message" : "Our officials will reach you ASAP!",
+    "trigger" : "confirm"
+  }, {
+    "hideInput" : true,
+    "id" : "13",
+    "message" : "BYE!👋",
+    "trigger" : "ending"
+  }, {
+    "id" : "ask-phone",
+    "message" : "Enter your number",
+    "trigger" : "phone"
+  }, {
+    "hideInput" : true,
+    "id" : "confirm",
+    "message" : "according to the details mentioned below",
+    "trigger" : "review"
+  } ],
+  "feedback" : [ {
+    "id" : "greet",
+    "message" : "Hello there! 🙏",
+    "trigger" : "wave"
+  }, {
+    "id" : "1",
+    "message" : "What is your sweet name?",
+    "trigger" : "Name"
+  }, {
+    "hideInput" : true,
+    "id" : "3",
+    "message" : "Well, Hi {previousValue}! Can you spare a moment?🕔",
+    "trigger" : "4"
+  }, {
+    "hideInput" : true,
+    "id" : "4",
+    "message" : "Please give us your precious reviews 👓",
+    "trigger" : "4.1"
+  }, {
+    "hideInput" : true,
+    "id" : "5",
+    "message" : "How would you rate the food? 💹",
+    "trigger" : "5.1"
+  }, {
+    "hideInput" : true,
+    "id" : "Food Rating",
+    "options" : [ {
+      "label" : "1",
+      "trigger" : "6",
+      "value" : "1"
+    }, {
+      "label" : "2",
+      "trigger" : "6",
+      "value" : "2"
+    }, {
+      "label" : "3",
+      "trigger" : "6",
+      "value" : "3"
+    }, {
+      "label" : "4",
+      "trigger" : "6",
+      "value" : "4"
+    }, {
+      "label" : "5",
+      "trigger" : "6",
+      "value" : "5"
+    } ]
+  }, {
+    "hideInput" : true,
+    "id" : "6",
+    "message" : "What about the ambiance?",
+    "trigger" : "6.1"
+  }, {
+    "hideInput" : true,
+    "id" : "Ambiance Rating",
+    "options" : [ {
+      "label" : "1",
+      "trigger" : "7",
+      "value" : "1"
+    }, {
+      "label" : "2",
+      "trigger" : "7",
+      "value" : "2"
+    }, {
+      "label" : "3",
+      "trigger" : "7",
+      "value" : "3"
+    }, {
+      "label" : "4",
+      "trigger" : "7",
+      "value" : "4"
+    }, {
+      "label" : "5",
+      "trigger" : "7",
+      "value" : "5"
+    } ]
+  }, {
+    "hideInput" : true,
+    "id" : "7",
+    "message" : "What do you think of the punctuality?",
+    "trigger" : "7.1"
+  }, {
+    "hideInput" : true,
+    "id" : "Punctuality Rating",
+    "options" : [ {
+      "label" : "1",
+      "trigger" : "8",
+      "value" : "1"
+    }, {
+      "label" : "2",
+      "trigger" : "8",
+      "value" : "2"
+    }, {
+      "label" : "3",
+      "trigger" : "8",
+      "value" : "3"
+    }, {
+      "label" : "4",
+      "trigger" : "8",
+      "value" : "4"
+    }, {
+      "label" : "5",
+      "trigger" : "8",
+      "value" : "5"
+    } ]
+  }, {
+    "hideInput" : true,
+    "id" : "8",
+    "message" : "How was the event as a whole? Did you enjoy?",
+    "trigger" : "8.1"
+  }, {
+    "hideInput" : true,
+    "id" : "Satisfied",
+    "options" : [ {
+      "label" : "Yes, absolutely! 🙂",
+      "trigger" : "10.1",
+      "value" : "yes"
+    }, {
+      "label" : "Not Really! 😟",
+      "trigger" : "negative",
+      "value" : "no"
+    } ]
+  }, {
+    "hideInput" : true,
+    "id" : "positive",
+    "message" : "Good to know that!",
+    "trigger" : "9"
+  }, {
+    "id" : "9",
+    "message" : "Will you let us know of the areas where we can improve?",
+    "trigger" : "11"
+  }, {
+    "id" : "11",
+    "message" : "Except for the above",
+    "trigger" : "12"
+  }, {
+    "id" : "negative",
+    "message" : "Really sorry to read that.☹️",
+    "trigger" : "10"
+  }, {
+    "id" : "10",
+    "message" : "Can you tell us where we lost you?",
+    "trigger" : "12"
+  }, {
+    "id" : "12",
+    "message" : "Please provide us your feedback✍🏽",
+    "trigger" : "feedback"
+  }, {
+    "hideInput" : true,
+    "id" : "display",
+    "message" : "Here is what you have submitted",
+    "trigger" : "review"
+  }, {
+    "hideInput" : true,
+    "id" : "thankyou",
+    "message" : "Thank you so much for spending your valuable time💓",
+    "trigger" : "pre-ending"
+  }, {
+    "hideInput" : true,
+    "id" : "meta-ending",
+    "message" : "BYE! 🙋‍♂️",
+    "trigger" : "ending"
+  } ],
+  "feedback-data" : {
+    "-MAykKH8urrlcsmt2P1m" : {
+      "Ambiance Rating" : "5",
+      "Feedback" : "dkhe fiuwe weueifhwekwhwoien",
+      "Food Rating" : "5",
+      "Name" : "afkub",
+      "Punctuality Rating" : "5",
+      "Satisfied" : "no"
+    },
+    "-MAyldUYQ1ZqWWkDiM_o" : {
+      "Ambiance Rating" : "4",
+      "Feedback" : "kjlkesn slilgsl,gjmlseg spig;",
+      "Food Rating" : "3",
+      "Name" : "sdljgn",
+      "Punctuality Rating" : "5",
+      "Satisfied" : "yes"
+    },
+    "-MAymThyK7YSqQpuKLNU" : {
+      "Ambiance Rating" : "5",
+      "Feedback" : "dkj",
+      "Food Rating" : "5",
+      "Name" : "dljn",
+      "Punctuality Rating" : "5",
+      "Satisfied" : "no"
+    },
+    "-MAyyClwFM_1YrLrs99E" : {
+      "Ambiance Rating" : "5",
+      "Feedback" : "Society but such shin",
+      "Food Rating" : "4",
+      "Name" : "Arco",
+      "Punctuality Rating" : "4",
+      "Satisfied" : "yes"
+    },
+    "-MAyypXnUaOrllyihXe5" : {
+      "Ambiance Rating" : "5",
+      "Feedback" : "ksjsjkjsng",
+      "Food Rating" : "4",
+      "Name" : "ukfsk",
+      "Punctuality Rating" : "5",
+      "Satisfied" : "yes"
+    },
+    "-MAyz5LkdeXKkL2udz8p" : {
+      "Ambiance Rating" : "5",
+      "Feedback" : "iyhbh kh jgj",
+      "Food Rating" : "4",
+      "Name" : "awfhj",
+      "Punctuality Rating" : "5",
+      "Satisfied" : "yes"
+    },
+    "-MAzV5OjBVsIs6vbEOqI" : {
+      "Ambiance Rating" : "4",
+      "Feedback" : "sekjbj sekjbkjs",
+      "Food Rating" : "5",
+      "Name" : "awkj",
+      "Punctuality Rating" : "3",
+      "Satisfied" : "yes"
+    },
+    "-MAzVSem4BDK4B-7AzIf" : {
+      "Ambiance Rating" : "5",
+      "Feedback" : "eljvd",
+      "Food Rating" : "4",
+      "Name" : "aekajb",
+      "Punctuality Rating" : "2",
+      "Satisfied" : "yes"
+    },
+    "-MAzX5d4s2SviWVHP5s_" : {
+      "Ambiance Rating" : "4",
+      "Feedback" : "hbh jhyvkhvhyjk ikm",
+      "Food Rating" : "5",
+      "Name" : "skeb",
+      "Punctuality Rating" : "3",
+      "Satisfied" : "yes"
+    },
+    "-MAzXdlTEXv6QLflvFyD" : {
+      "Ambiance Rating" : "4",
+      "Feedback" : "ubk fksekjjebfkjenfwefniwelf l",
+      "Food Rating" : "2",
+      "Name" : "jdbl",
+      "Punctuality Rating" : "4",
+      "Satisfied" : "yes"
+    },
+    "-MAzY_DN5b0eJ6mTCWql" : {
+      "Ambiance Rating" : "4",
+      "Feedback" : "Excellent service 👍",
+      "Food Rating" : "5",
+      "Name" : "Omkar",
+      "Punctuality Rating" : "4",
+      "Satisfied" : "yes"
+    },
+    "-MB02r8BI56-SnTL95O6" : {
+      "Ambiance Rating" : "4",
+      "Feedback" : "dnols seosuov vwuje",
+      "Food Rating" : "5",
+      "Name" : "ksuebu",
+      "Punctuality Rating" : "5",
+      "Satisfied" : "yes"
+    },
+    "-MBANP7MV54jwskOBClB" : {
+      "ambiance" : "4",
+      "feedback" : "If I were given a choice, I'd have fallen in a relationship with this event",
+      "food" : "3",
+      "happy" : "yes",
+      "name" : "Omkar Suryakant Bharamgunnde",
+      "punctuality" : "5"
+    }
+  },
+  "feedback-response" : {
+    "-MAyoC9CeR5mMSJixPMf" : {
+      "event" : "Marraige",
+      "name" : "Omkar",
+      "price" : "25000-30000"
+    },
+    "-MAyq87b2oeK1M5T9wSs" : {
+      "event" : "Marraige",
+      "name" : "Omkar",
+      "price" : "25000-30000"
+    }
+  },
+  "feedback-visited" : {
+    "-MAyv2Z8xg5lHuozWaQG" : {
+      "visited" : true
+    },
+    "-MAyw4HnILaz-MOJD5VZ" : {
+      "visited" : true
+    },
+    "-MAywmf4lH2VUa67qSC6" : {
+      "visited" : true
+    },
+    "-MAywvORrbkmFhoGurHv" : {
+      "visited" : true
+    },
+    "-MAyxHnUQMMV4dF3rbKN" : {
+      "visited" : true
+    },
+    "-MAyxUzVhQNBJyERbYZb" : {
+      "visited" : true
+    },
+    "-MAzWvc8uxH_9CJ32SBR" : {
+      "visited" : true
+    },
+    "-MAzXQEa2DtRXYBbm8Qg" : {
+      "visited" : true
+    },
+    "-MAzYMWbqbgA4CjiliKG" : {
+      "visited" : true
+    },
+    "-MAzkzHv8_eCQXMXUqkG" : {
+      "visited" : true
+    },
+    "-MAzxsoZ3SC0B_8k7oB6" : {
+      "visited" : true
+    },
+    "-MB02im9ye9Wi0Yenvpg" : {
+      "visited" : true
+    },
+    "-MB0D-8WAPAGdGcWh1Hx" : {
+      "visited" : true
+    },
+    "-MB0H7JHD05twnHnWo77" : {
+      "visited" : true
+    },
+    "-MB0UzT2rxwIBcz6ZRix" : {
+      "visited" : true
+    },
+    "-MB3lvMmyQKZqJGVBhXs" : {
+      "visited" : true
+    },
+    "-MB4BwXOfwZHZM5BQPGE" : {
+      "visited" : true
+    },
+    "-MB4BzW7GZz2XxpG81JU" : {
+      "visited" : true
+    },
+    "-MB5ciBvR3WFY9tmV1-F" : {
+      "visited" : true
+    },
+    "-MB8Jyx8hpOmy944_ZsI" : {
+      "visited" : true
+    },
+    "-MB8RbEv6s47j7wcWkj0" : {
+      "visited" : true
+    },
+    "-MB9hv1ghNRzUUv80siu" : {
+      "visited" : true
+    },
+    "-MB9ieFm2PknHFiQCw_i" : {
+      "visited" : true
+    },
+    "-MB9jkJ7nJQcBFyfhjrN" : {
+      "visited" : true
+    },
+    "-MB9vZ59SVHUyWhXdkT1" : {
+      "visited" : true
+    },
+    "-MB9w_gDEB5aWSCRsed2" : {
+      "visited" : true
+    }
+  }
 }

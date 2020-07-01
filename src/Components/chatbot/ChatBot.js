@@ -5,9 +5,10 @@ import '../../index.css'
 import Review from './MakeTable';
 import Image from 'react-bootstrap/Image'
 import { Button } from '@material-ui/core';
+import { renderToString } from 'react-dom/server';
 
 function CustomChatbot(props) {
-
+  
   const style = {
     margin: 3,
     top: 0,
@@ -16,24 +17,24 @@ function CustomChatbot(props) {
     left: 'auto',
     position: 'fixed',
   };
-
+  
   // [1:background color, 2:messageBubble, 3: fontColor, 4: headerColor, 5: userMessage, 6: tableColor]
   const [mode, setMode] = useState(["#344152", "#687C97	", "white", "#2E37FE", "#380474", "light"])
   const [variant, setVariant] = useState(['primary', "Light Mode"])
-
+  
   const headerComponent=(
     <div style={{"backgroundColor": mode[3]}}>
-      <h4 style={{color:mode[2], padding: 0.3 +'em'}}>Wise Chatbot</h4>
+      <h4 style={{color:"white", padding: 0.3 +'em'}}>Wise Chatbot</h4>
       <Button
         style={style}
         variant="contained" color={variant[0]}
         onClick={() => mode[2]==="white"? 
-          (setMode(["#CAD0D0", "#F1F3F3", "black", "#162252", "#CAE1FF", "dark"]), setVariant(['default', 'Dark Mode'])):
-          (setMode(["#344152", "#687C97	", "white", "#2E37FE", "#380474", "light"]), setVariant(['primary', 'Light Mode']))}
-      >{variant[1]}</Button>
+        (setMode(["#CAD0D0", "#F1F3F3", "black", "#162252", "#CAE1FF", "dark"]), setVariant(['default', 'Dark Mode'])):
+        (setMode(["#344152", "#687C97	", "white", "#2E37FE", "#380474", "light"]), setVariant(['primary', 'Light Mode']))}
+        >{variant[1]}</Button>
     </div>
   )
-
+  
   const config = {
     width: "100%",
     height: "650px",
@@ -50,11 +51,12 @@ function CustomChatbot(props) {
     userBubbleColor: mode[4],
     userFontColor: mode[2],
   };
-
+  
   var steps=props.steps;
+  const REV=renderToString(<span role="img" aria-label="wave" className="wave" >👋</span>);
   var local_steps=[
     {
-      "id": "name",
+      "id": "Name",
       "user": true,
       "trigger": "3",
       "validator": (value) => {
@@ -65,7 +67,7 @@ function CustomChatbot(props) {
       }
     },
     {
-      "id": "feedback",
+      "id": "Feedback",
       "user": true,
       "trigger": "display",
       "validator": (value) => {
@@ -93,28 +95,28 @@ function CustomChatbot(props) {
       "id": "5.1",
       "component": < Image id="imgs" fluid rounded src="https://i.gifer.com/3S7I.gif" alt="REVIEW TIME" />,
       "asMessage": true,
-      "trigger": "food",
+      "trigger": "Food Rating",
       "hideInput": true
     },
     {
       "id": "6.1",
       "component": < Image id="imgs" fluid rounded src="https://i.pinimg.com/originals/62/52/69/625269cb5d94ef1bb466c90c8ce00512.gif" alt="REVIEW TIME" />,
       "asMessage": true,
-      "trigger": "ambiance",
+      "trigger": "Ambiance Rating",
       "hideInput": true
     },
     {
       "id": "7.1",
       "component": < Image id="imgs" fluid rounded src="https://thumbs.gfycat.com/AmpleClassicGermanwirehairedpointer-small.gif" alt="REVIEW TIME" />,
       "asMessage": true,
-      "trigger": "punctuality",
+      "trigger": "Punctuality Rating",
       "hideInput": true
     },
     {
       "id": "8.1",
       "component": < Image id="imgs" fluid rounded src="https://49.media.tumblr.com/a9501c0bb44b44306a621e0a0db47a15/tumblr_o3kqi9gqTl1sz0dmro1_500.gif" alt="REVIEW TIME" />,
       "asMessage": true,
-      "trigger": "happy",
+      "trigger": "Satisfied",
       "hideInput": true
     },
     {
@@ -134,9 +136,7 @@ function CustomChatbot(props) {
     {
       "id": "wave",
       "component": (
-        <div>
-          <span role="img" aria-label="wave" className="wave" >👋</span>
-        </div>
+        <div dangerouslySetInnerHTML={{__html:REV}}></div>
       ),
       "asMessage": true,
       "trigger": "1",
