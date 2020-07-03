@@ -6,6 +6,7 @@ import Review from './MakeTable';
 import Image from 'react-bootstrap/Image'
 import { Button } from '@material-ui/core';
 import { renderToString } from 'react-dom/server';
+import {isBrowser, isTablet, BrowserView, MobileOnlyView, TabletView} from 'react-device-detect';
 
 function CustomChatbot(props) {
   
@@ -34,12 +35,29 @@ function CustomChatbot(props) {
         >{variant[1]}</Button>
     </div>
   )
-  
-  const config = {
-    width: "100%",
-    height: "650px",
-    // floating: true
-  };
+  var config={}
+  if(isTablet){
+    config = {
+      width: "100%",
+      height: "95vh",
+      // floating: true
+    };
+  }
+  else if(isBrowser){
+    config = {
+      width: "100%",
+      height: "100vh",
+      // floating: true
+    };
+  }
+  else{
+    config = {
+      width: "100%",
+      height: "80vh",
+      // floating: true
+    };
+  }
+
   const theme = {
     background: mode[0],
     fontFamily: "Arial, Helvetica, sans-serif",
@@ -155,18 +173,50 @@ function CustomChatbot(props) {
   ];
   steps=steps.concat(local_steps);
   return (
-    <ThemeProvider theme={theme}>
-      <ChatBot 
-      enableMobileAutoFocus="true" 
-      botDelay="500" 
-      enableSmoothScroll="true" 
-      botAvatar="https://miro.medium.com/max/525/1*lyyXmbeoK5JiIBNCnzzjjg.png" userAvatar="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-male-5-512.png" 
-      // headerTitle="Wise Chatbot" 
-      steps={steps} 
-      {...config} 
-      headerComponent={headerComponent}
-      />
-    </ThemeProvider>
+    <>
+    <BrowserView>
+      <ThemeProvider theme={theme}>
+        <ChatBot 
+        enableMobileAutoFocus="true" 
+        botDelay="500" 
+        enableSmoothScroll="true" 
+        botAvatar="https://miro.medium.com/max/525/1*lyyXmbeoK5JiIBNCnzzjjg.png" userAvatar="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-male-5-512.png" 
+        // headerTitle="Wise Chatbot" 
+        steps={steps} 
+        {...config}
+        headerComponent={headerComponent}
+        />
+      </ThemeProvider>
+    </BrowserView>
+    <MobileOnlyView>
+      <ThemeProvider theme={theme}>
+        <ChatBot 
+        enableMobileAutoFocus="true" 
+        botDelay="500" 
+        enableSmoothScroll="true" 
+        botAvatar="https://miro.medium.com/max/525/1*lyyXmbeoK5JiIBNCnzzjjg.png" userAvatar="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-male-5-512.png" 
+        // headerTitle="Wise Chatbot" 
+        steps={steps} 
+        contentStyle={config}
+        headerComponent={headerComponent}
+        />
+      </ThemeProvider>
+    </MobileOnlyView>
+    <TabletView>
+      <ThemeProvider theme={theme}>
+        <ChatBot 
+        enableMobileAutoFocus="true" 
+        botDelay="500" 
+        enableSmoothScroll="true" 
+        botAvatar="https://miro.medium.com/max/525/1*lyyXmbeoK5JiIBNCnzzjjg.png" userAvatar="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-male-5-512.png" 
+        // headerTitle="Wise Chatbot" 
+        steps={steps} 
+        {...config}
+        headerComponent={headerComponent}
+        />
+      </ThemeProvider>
+    </TabletView>
+    </>
   );
 }
 
