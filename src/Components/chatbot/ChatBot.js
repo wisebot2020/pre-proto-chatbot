@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 function CustomChatbot(props) {
   const config = {
-    width: "100%",
+    width: "90%",
     height: "100%",
     // floating: true
   };
